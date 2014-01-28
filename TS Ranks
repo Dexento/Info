@@ -1,163 +1,57 @@
-package me.Dexento.ModTools;
+package com.Dexento.ImpulseMc;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.logging.Logger;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Horse;
+//import org.bukkit.entity.HumanEntity;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.inventory.InventoryOpenEvent;
+//import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.plugin.java.JavaPlugin;
 
-public class Utils {
-
-	public static List<ItemStack> getPapers() {
-		List<ItemStack> items = new ArrayList<ItemStack>();
-		ItemStack paper1 = new ItemStack(Material.PAPER);
-		ItemStack paper2 = new ItemStack(Material.PAPER);
-		ItemStack paper3 = new ItemStack(Material.PAPER);
-		ItemStack paper4 = new ItemStack(Material.PAPER);
-		ItemStack paper5 = new ItemStack(Material.PAPER);
-		ItemStack paper6 = new ItemStack(Material.PAPER);
-		ItemStack paper7 = new ItemStack(Material.PAPER);
-		ItemStack paper8 = new ItemStack(Material.PAPER);
-		ItemStack paper9 = new ItemStack(Material.PAPER);
-		ItemStack paper10 = new ItemStack(Material.PAPER);
-		ItemStack paper11 = new ItemStack(Material.PAPER);
-		ItemStack paper12 = new ItemStack(Material.PAPER);
-		ItemStack paper13 = new ItemStack(Material.PAPER);
-		ItemStack paper14 = new ItemStack(Material.PAPER);
-		ItemStack paper15 = new ItemStack(Material.PAPER);
-		ItemStack paper16 = new ItemStack(Material.PAPER);
-		ItemStack paper17 = new ItemStack(Material.PAPER);
-		ItemStack paper18 = new ItemStack(Material.PAPER);
-
-		ItemMeta paper1M = paper1.getItemMeta();
-		ItemMeta paper2M = paper2.getItemMeta();
-		ItemMeta paper3M = paper3.getItemMeta();
-		ItemMeta paper4M = paper4.getItemMeta();
-		ItemMeta paper5M = paper5.getItemMeta();
-		ItemMeta paper6M = paper6.getItemMeta();
-		ItemMeta paper7M = paper7.getItemMeta();
-		ItemMeta paper8M = paper8.getItemMeta();
-		ItemMeta paper9M = paper9.getItemMeta();
-		ItemMeta paper10M = paper10.getItemMeta();
-		ItemMeta paper11M = paper11.getItemMeta();
-		ItemMeta paper12M = paper12.getItemMeta();
-		ItemMeta paper13M = paper13.getItemMeta();
-		ItemMeta paper14M = paper14.getItemMeta();
-		ItemMeta paper15M = paper15.getItemMeta();
-		ItemMeta paper16M = paper16.getItemMeta();
-		ItemMeta paper17M = paper17.getItemMeta();
-		ItemMeta paper18M = paper18.getItemMeta();
-
-		paper1M.setDisplayName(ChatColor.YELLOW + "Stop Spamming");
-		paper1M.setLore(Arrays.asList(ChatColor.GRAY + "Please stop spamming!"));
-		paper1.setItemMeta(paper1M);
-		items.add(paper1);
-
-		paper2M.setDisplayName(ChatColor.YELLOW + "Report rulebreakers here:");
-		paper2M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Report rule breakers here:"));
-		paper2.setItemMeta(paper2M);
-		items.add(paper2);
-
-		paper3M.setDisplayName(ChatColor.YELLOW + "VIP Requirements");
-		paper3M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "You need 500 subscribers to apply for VIP."));
-		paper3.setItemMeta(paper3M);
-		items.add(paper3);
-
-		paper4M.setDisplayName(ChatColor.YELLOW + "Allowed Mods");
-		paper4M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "List of allowed mods here:"));
-		paper4.setItemMeta(paper4M);
-		items.add(paper4);
-
-		paper5M.setDisplayName(ChatColor.YELLOW + "Teamspeak IP");
-		paper5M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "TeamSpeak IP: ts.impulse-mc.com"));
-		paper5.setItemMeta(paper6M);
-		items.add(paper5);
-
-		paper6M.setDisplayName(ChatColor.YELLOW + "Moderator Applications");
-		paper6M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "You can apply for moderator here:"));
-		paper6.setItemMeta(paper6M);
-		items.add(paper6);
-
-		paper7M.setDisplayName(ChatColor.YELLOW + "Rank Colours");
-		paper7M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Red names are moderators and admins, owners are yellow. :)"));
-		paper7.setItemMeta(paper7M);
-		items.add(paper7);
-
-		paper8M.setDisplayName(ChatColor.YELLOW + "Hackusations");
-		paper8M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Please do not talk about hacks in the hub!"));
-		paper8.setItemMeta(paper8M);
-		items.add(paper8);
-
-		paper9M.setDisplayName(ChatColor.YELLOW + "Accounts Question");
-		paper9M.setLore(Arrays.asList(ChatColor.GRAY + "Email ", ChatColor.GRAY
-				+ "support@impulse-mc.com", ChatColor.GRAY
-				+ "for account or payment questions. :)"));
-		paper9.setItemMeta(paper9M);
-		items.add(paper9);
-
-		paper10M.setDisplayName(ChatColor.YELLOW + "No Ban Talk");
-		paper10M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Don't talk about bans in the hub, please."));
-		paper10.setItemMeta(paper10M);
-		items.add(paper10);
-
-		paper11M.setDisplayName(ChatColor.YELLOW + "Stahp Arguing!");
-		paper11M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Stop arguing! Drink some ice cold OJ."));
-		paper11.setItemMeta(paper11M);
-		items.add(paper11);
-
-		paper12M.setDisplayName(ChatColor.YELLOW + "Plug.DJ");
-		paper12M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "You can check out the official impulse plugin.dj here:"));
-		paper12.setItemMeta(paper12M);
-		items.add(paper12);
-
-		paper13M.setDisplayName(ChatColor.YELLOW + "Map Submissions");
-		paper13M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Submit maps for impulse here:"));
-		paper13.setItemMeta(paper13M);
-		items.add(paper13);
-
-		paper14M.setDisplayName(ChatColor.YELLOW + "Ban Appeals");
-		paper14M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Please do not talk about hacks in the hub!"));
-		paper14.setItemMeta(paper14M);
-		items.add(paper14);
-
-		paper15M.setDisplayName(ChatColor.YELLOW + "Advertising");
-		paper15M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Please do not advertise!"));
-		paper15.setItemMeta(paper15M);
-		items.add(paper15);
-
-		paper16M.setDisplayName(ChatColor.YELLOW + "Rules");
-		paper16M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "You can read the rules here:"));
-		paper16.setItemMeta(paper16M);
-		items.add(paper16);
-
-		paper17M.setDisplayName(ChatColor.YELLOW + "Member");
-		paper17M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "You can read how to become a member here:"));
-		paper17.setItemMeta(paper17M);
-		items.add(paper17);
-
-		paper18M.setDisplayName(ChatColor.YELLOW + "Don't spam t's");
-		paper18M.setLore(Arrays.asList(ChatColor.GRAY
-				+ "Please don't spam t's <3"));
-		paper18.setItemMeta(paper18M);
-		items.add(paper18);
-		return items;
+public class Main extends JavaPlugin 
+{
+    public final Logger logger = Logger.getLogger("TicTacToe");
+    public static Main plugin;
+	
+	public void onEnable()
+	{
+        this.logger.info("TicTacToe has been enabled!");
 	}
-}
+	
+	public void onDisable()
+	{
+		this.logger.info("TicTacToe has been disabled!");
+	}
+	
+    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+    	Player p = (Player) sender;
+    	if(commandLabel.equalsIgnoreCase("horsify")){
+    		//if(p.hasPermission("impulse.horsify")){
+    			if(args.length == 0){
+    				p.sendMessage(ChatColor.RED + "Correct usage: /horsify <player>");
+    			}else if(args.length == 1){
+    				Player tp = p.getServer().getPlayer(args[0]);
+    				
+    				Horse h = (Horse) tp.getPlayer().getWorld().spawnEntity(tp.getPlayer().getLocation(), EntityType.HORSE);
+    				h.setTamed(true);
+    				h.setOwner(tp.getPlayer());
+    				h.getInventory().setSaddle(new ItemStack(Material.SADDLE, 1));
+    				h.getInventory().setArmor(new ItemStack(Material.GOLD_BARDING, 1));
+    		        h.setPassenger(tp);
+    		        
+    		        tp.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.GREEN + "Horse" + ChatColor.DARK_GRAY + "] " + ChatColor.AQUA + "You where given a horse by: " + p.getName());
+    		        
+    		        p.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.GREEN + "Horse" + ChatColor.DARK_GRAY + "] " + ChatColor.AQUA + "You horsified player " + args[0]);
+    			}
+    		}
+    	//}
+		return false;
+    }
